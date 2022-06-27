@@ -1,0 +1,30 @@
+% TP: Muerte en la mansión Dreadbury
+
+%PUNTO 1
+
+viveEnLaMansion(agatha).
+viveEnLaMansion(mayordomo).
+viveEnLaMansion(charles). 
+
+odia(agatha,Odiada) :-
+    viveEnLaMansion(Odiada),
+    Odiada \= mayordomo.
+
+
+odia(charles,Odiada) :-
+    viveEnLaMansion(Odiada),
+    not(odiaA(agatha,Odiada)).
+
+odia(mayordomo,Odiada) :-
+    odiaA(agatha,Odiada).
+
+esMasRico(Persona,agatha) :-
+    viveEnLaMansion(Persona),
+    not(odiaA(mayordomo,Persona)).
+
+esAsesino(Asesino,Victima) :-
+    esAsesino(Asesino,Victima),
+    viveEnLaMansion(Asesino),
+    not(esMasRico(Asesino,Victima)).
+
+
