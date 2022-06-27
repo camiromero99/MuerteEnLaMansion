@@ -16,11 +16,11 @@ odia(charles,Odiada) :-
     not(odiaA(agatha,Odiada)).
 
 odia(mayordomo,Odiada) :-
-    odiaA(agatha,Odiada).
+    odia(agatha,Odiada).
 
 esMasRico(Persona,agatha) :-
     viveEnLaMansion(Persona),
-    not(odiaA(mayordomo,Persona)).
+    not(odia(mayordomo,Persona)).
 
 esAsesino(Asesino,Victima) :-
     esAsesino(Asesino,Victima),
